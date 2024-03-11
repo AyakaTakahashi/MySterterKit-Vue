@@ -1,3 +1,9 @@
+## Technology
+- Frontend: Vue.js, Vuetify
+- Backend: PHP laravel
+- Database: MySQL
+- Environment setup: Docker
+
 ## Getting Started
 To get started with our project, follow these steps:
 
