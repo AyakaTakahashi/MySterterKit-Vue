@@ -15,6 +15,7 @@ import MenuDetailComponent from "./components/menu/MenuDetail.vue"
 const routes = [
     { 
         path: '/', 
+        name: 'dashboard', 
         component: DashboardComponent
     },
     { 

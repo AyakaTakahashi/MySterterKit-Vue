@@ -2,8 +2,10 @@
     <v-app>
         <v-app-bar color="primary" dark app clipped-left>
             <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title class="title">Vuetify</v-toolbar-title><v-spacer></v-spacer>
+            <v-toolbar-title class="title" >My-StarterーKit</v-toolbar-title>
+            <v-spacer></v-spacer>
             <v-toolbar-items>
+                <v-btn outlined v-bind:to="{name: 'dashboard'}">Dashboard</v-btn>
                 <v-btn outlined v-bind:to="{name: 'customer.list'}">Customer</v-btn>
                 <v-btn outlined v-bind:to="{name: 'menu.list'}">Menu</v-btn>
                 <v-btn outlined v-bind:to="{name: 'todo.list'}">TODO</v-btn>
@@ -13,7 +15,7 @@
         <v-footer color="primary" dark app clipped-left>
             Vuetify
         </v-footer>
-        
+        Dashboard
         <v-navigation-drawer app v-model="drawer" clipped >
             <v-container>
                 <v-list-item>
@@ -49,11 +51,13 @@ export default {
         return{
             drawer: null,
             supports:[
+                'Dashboard',
                 'Customer',
                 'Menu',
                 'TODO',
             ],
             links: [
+                ['mdi-view-dashboard', 'Dashboard', 'dashboard'],
                 ['mdi-inbox-arrow-down', 'Customer', 'customer.list'],
                 ['mdi-speedometer', 'Menu', 'menu.list'],
                 ['mdi-palette', 'TODO', 'todo.list'],
