@@ -2,7 +2,7 @@
     <v-app>
         <v-app-bar color="primary" dark app clipped-left>
             <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title class="title" >My-StarterーKit</v-toolbar-title>
+            <v-toolbar-title class="title" >My-Starter-Kit</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
                 <v-btn outlined v-bind:to="{name: 'dashboard'}">Dashboard</v-btn>
