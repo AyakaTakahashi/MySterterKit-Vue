@@ -1,45 +1,61 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-sm-6">
-                <form>
-                    <div class="form-group row border-bottom">
-                        <label for="id" class="col-sm-3 col-form-label">ID</label>
-                        <input type="text" class="col-sm-9 form-control-plaintext" readonly id="id" v-model="todo.id">
-                    </div>
-                    <div class="form-group row border-bottom">
-                        <label for="title" class="col-sm-3 col-form-label">Title</label>
-                        <input type="text" class="col-sm-9 form-control-plaintext" readonly id="title" v-model="todo.title">
-                    </div>
-                    <div class="form-group row border-bottom">
-                        <label for="content" class="col-sm-3 col-form-label">Content</label>
-                        <input type="text" class="col-sm-9 form-control-plaintext" readonly id="content" v-model="todo.content">
-                    </div>
-                    <div class="form-group row border-bottom">
-                        <label for="person-in-charge" class="col-sm-3 col-form-label">Person In Charge</label>
-                        <input type="text" class="col-sm-9 form-control-plaintext" readonly id="person-in-charge" v-model="todo.person_in_charge">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <v-container>
+        <v-row justify="center">
+            <v-col cols="12" sm="6">
+                <v-form>
+                    <v-text-field
+                        label="ID"
+                        v-model="todo.id"
+                        readonly
+                        outlined
+                        :value="todo.id"
+                        class="mb-4"
+                    ></v-text-field>
+                    <v-text-field
+                        label="Title"
+                        v-model="todo.title"
+                        readonly
+                        outlined
+                        :value="todo.title"
+                        class="mb-4"
+                    ></v-text-field>
+                    <v-text-field
+                        label="Content"
+                        v-model="todo.content"
+                        readonly
+                        outlined
+                        :value="todo.content"
+                        class="mb-4"
+                    ></v-text-field>
+                    <v-text-field
+                        label="Person In Charge"
+                        v-model="todo.person_in_charge"
+                        readonly
+                        outlined
+                        :value="todo.person_in_charge"
+                        class="mb-4"
+                    ></v-text-field>
+                </v-form>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
-
+  
 <script>
 export default {
     props: {
         todoId: String
     },
-    data: function() {
+    data() {
         return {
-            todo: {}
+        todo: {}
         }
     },
     methods: {
         getTodo() {
             axios.get('/api/todos/' + this.todoId)
                 .then((res) => {
-                    this.todo = res.data;
+                this.todo = res.data;
                 });
         }
     },
@@ -48,3 +64,4 @@ export default {
     }
 }
 </script>
+  
