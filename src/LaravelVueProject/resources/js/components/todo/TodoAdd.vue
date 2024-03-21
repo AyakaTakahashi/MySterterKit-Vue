@@ -1,38 +1,39 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-sm-6">
-                <form v-on:submit.prevent="submit">
-                    <div class="form-group row">
-                        <label for="title" class="col-sm-3 col-form-label">Title</label>
-                        <input type="text" class="col-sm-9 form-control" id="title" v-model="todo.title">
-                    </div>
-                    <div class="form-group row">
-                        <label for="content" class="col-sm-3 col-form-label">Content</label>
-                        <input type="text" class="col-sm-9 form-control" id="content" v-model="todo.content">
-                    </div>
-                    <div class="form-group row">
-                        <label for="person-in-charge" class="col-sm-3 col-form-label">Person In Charge</label>
-                        <input type="text" class="col-sm-9 form-control" id="person-in-charge" v-model="todo.person_in_charge">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div>
+    <v-container>
+        <v-row justify="center">
+            <v-col cols="12" sm="6">
+            <v-form @submit.prevent="submit">
+                <v-text-field
+                    label="Title"
+                    v-model="todo.title"
+                ></v-text-field>
+                <v-text-field
+                    label="Content"
+                    v-model="todo.content"
+                ></v-text-field>
+                <v-text-field
+                    label="Person In Charge"
+                    v-model="todo.person_in_charge"
+                ></v-text-field>
+                <v-btn color="primary" type="submit">Submit</v-btn>
+            </v-form>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
+  
 <script>
 export default {
-    data: function () {
+    data() {
         return {
-            todo: {}
+        todo: {}
         }
     },
     methods: {
         submit() {
             axios.post('/api/todos', this.todo)
-                .then((res) => {
-                    this.$router.push({name: 'todo.list'});
+                .then(res => {
+                this.$router.push({ name: 'todo.list' });
                 });
         }
     }
