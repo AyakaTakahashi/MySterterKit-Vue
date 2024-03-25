@@ -24,7 +24,7 @@ To get started with our project, follow these steps:
   - List page: Show all of the menus
   - Register page: Could register the new menu
   - Edit page: Could edit the treatment details.
- - Todo management
+- Todo management
   - List page: Show all of the todos
   - Register page: Could register the new todo
   - Edit page: Could edit the todo
